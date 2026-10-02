@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Massimo Orlando | Finance Student</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f6f8;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background: #0f172a;
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #60a5fa;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: #0f172a;
+            color: white;
+            padding: 80px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .hero-text {
+            max-width: 700px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .hero h2 {
+            font-size: 24px;
+            font-weight: normal;
+            color: #93c5fd;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #d1d5db;
+        }
+
+        /* Headshot */
+        .headshot-container {
+            text-align: center;
+            min-width: 220px;
+        }
+
+        .headshot {
+            width: 210px;
+            height: 210px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            background: #334155;
+            display: block;
+            margin: auto;
+        }
+
+        .upload-label {
+            display: inline-block;
+            margin-top: 15px;
+            background: #2563eb;
+            color: white;
+            padding: 10px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .upload-label:hover {
+            background: #1d4ed8;
+        }
+
+        #headshotUpload {
+            display: none;
+        }
+
+        /* General Sections */
+        section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 70px 25px;
+        }
+
+        section h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: #0f172a;
+        }
+
+        /* Personal Statement */
+        .statement {
+            background: white;
+            padding: 30px;
+            border-left: 5px solid #2563eb;
+            border-radius: 8px;
+            font-size: 19px;
+        }
+
+        /* Skills */
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skill {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .skill h3 {
+            color: #2563eb;
+            margin-bottom: 8px;
+        }
+
+        /* Projects */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .project {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .project h3 {
+            color: #0f172a;
+            margin-bottom: 12px;
+        }
+
+        .project p {
+            margin-bottom: 18px;
+            color: #4b5563;
+        }
+
+        .project a {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            padding: 9px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .project a:hover {
+            background: #1d4ed8;
+        }
+
+        /* Contact */
+        .contact {
+            background: #0f172a;
+            color: white;
+            max-width: none;
+            text-align: center;
+        }
+
+        .contact h2 {
+            color: white;
+        }
+
+        .contact p {
+            margin: 8px 0;
+        }
+
+        .contact a {
+            color: #93c5fd;
+        }
+
+        /* Footer */
+        footer {
+            background: #020617;
+            color: #94a3b8;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        /* Mobile */
+        @media (max-width: 700px) {
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding: 60px 25px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero h2 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Massimo Orlando</div>
+
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- Hero / Personal Introduction -->
+    <header class="hero">
+
+        <div class="hero-text">
+
+            <h1>Massimo Orlando</h1>
+
+            <h2>Finance Student | Financial Analysis | Business</h2>
+
+            <p>
+                Finance student focused on financial analysis, investment research,
+                and using data-driven insights to support business and investment decisions.
+            </p>
+
+        </div>
+
+
+        <!-- Headshot -->
+        <div class="headshot-container">
+
+            <!-- Default placeholder -->
+            <img
+                id="headshot"
+                class="headshot"
+                src=""
+                alt="Professional headshot"
+            >
+
+            <!-- Upload button -->
+            <label class="upload-label" for="headshotUpload">
+                Choose Headshot
+            </label>
+
+            <input
+                type="file"
+                id="headshotUpload"
+                accept="image/*"
+            >
+
+        </div>
+
+    </header>
+
+
+    <!-- Personal Statement -->
+    <section id="about">
+
+        <h2>Personal Statement</h2>
+
+        <div class="statement">
+
+            <p>
+                I am a finance student developing expertise in financial analysis,
+                investment research, and business strategy with an interest in
+                applying analytical skills to real-world financial decisions.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- Skills -->
+    <section id="skills">
+
+        <h2>Skills</h2>
+
+        <div class="skills">
+
+            <div class="skill">
+                <h3>Financial Analysis</h3>
+                <p>Financial statements, valuation concepts, and quantitative analysis.</p>
+            </div>
+
+            <div class="skill">
+                <h3>Microsoft Excel</h3>
+                <p>Data organization, calculations, financial models, and analysis.</p>
+            </div>
+
+            <div class="skill">
+                <h3>Investment Research</h3>
+                <p>Researching markets, companies, industries, and economic trends.</p>
+            </div>
+
+            <div class="skill">
+                <h3>Data Analysis</h3>
+                <p>Analyzing datasets and using quantitative information to identify trends.</p>
+            </div>
+
+            <div class="skill">
+                <h3>Business Strategy</h3>
+                <p>Evaluating business decisions, markets, and competitive factors.</p>
+            </div>
+
+            <div class="skill">
+                <h3>Communication</h3>
+                <p>Presenting analytical findings clearly through written and visual formats.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Projects -->
+    <section id="projects">
+
+        <h2>Projects</h2>
+
+        <div class="projects">
+
+            <!-- Project 1 -->
+            <div class="project">
+
+                <h3>Investment & Market Analysis</h3>
+
+                <p>
+                    An analysis of a financial asset examining price movements,
+                    market factors, and relevant economic conditions.
+                </p>
+
+                <!-- Replace # with your actual project link -->
+                <a href="#" target="_blank">
+                    View Project
+                </a>
+
+            </div>
+
+
+            <!-- Project 2 -->
+            <div class="project">
+
+                <h3>Business / Marketing Analysis</h3>
+
+                <p>
+                    A business analysis examining a company's strategy,
+                    target market, competitive environment, and potential
+                    opportunities for growth.
+                </p>
+
+                <!-- Replace # with your actual project link -->
+                <a href="#" target="_blank">
+                    View Project
+                </a>
+
+            </div>
+
+
+            <!-- Project 3 -->
+            <div class="project">
+
+                <h3>Financial Data Project</h3>
+
+                <p>
+                    A quantitative project using financial or economic data
+                    to identify trends and communicate analytical findings.
+                </p>
+
+                <!-- Replace # with your actual project link -->
+                <a href="#" target="_blank">
+                    View Project
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+
+        <h2>Contact</h2>
+
+        <p>Email: <a href="mailto:mao212@rutgers.edu">
+            mao212@rutgers.edu
+        </a></p>
+
+        <p>
+            LinkedIn:
+            <a href="#" target="_blank">
+                https://www.linkedin.com/public-profile/settings/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BCfqKaCbVQJGU6GBAHE6TdQ%3D%3D
+            </a>
+        </p>
+
+        <p>
+            GitHub:
+            <a href="#" target="_blank">
+                GitHub Profile
+            </a>
+        </p>
+
+    </section>
+
+
+    <footer>
+        © 2026 Massimo Orlando | Personal Portfolio
+    </footer>
+
+
+    <!-- Headshot Upload Script -->
+    <script>
+
+        const upload = document.getElementById("headshotUpload");
+        const headshot = document.getElementById("headshot");
+
+        upload.addEventListener("change", function () {
+
+            const file = this.files[0];
+
+            if (file) {
+
+                const reader = new FileReader();
+
+                reader.onload = function (event) {
+                    headshot.src = event.target.result;
+                };
+
+                reader.readAsDataURL(file);
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
